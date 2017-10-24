@@ -42,10 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   clear.on('change', function(e) {
+    clearSequencer();
+  });
+
+  function clearSequencer() {
     clearTriangleSequencer();
     clearSawtoothSequencer();
     clearNoiseSequencer();
-  });
+  };
 
   function playTriangle(note, duration="16n") {
     triangleSynth.triggerAttackRelease(note, duration);
@@ -91,5 +95,33 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
+
+  function loadAshesTune() {
+    clearSequencer();
+
+    triangleSequencer.matrix.toggle.cell(1,4);
+    triangleSequencer.matrix.toggle.cell(4,4);
+    triangleSequencer.matrix.toggle.cell(7,4);
+    triangleSequencer.matrix.toggle.cell(10,4);
+    triangleSequencer.matrix.toggle.cell(13,4);
+
+    sawtoothSequencer.matrix.toggle.cell(0,0);
+    sawtoothSequencer.matrix.toggle.cell(3,0);
+    sawtoothSequencer.matrix.toggle.cell(1,1);
+    sawtoothSequencer.matrix.toggle.cell(4,1);
+    sawtoothSequencer.matrix.toggle.cell(6,1);
+    sawtoothSequencer.matrix.toggle.cell(2,2);
+    sawtoothSequencer.matrix.toggle.cell(5,2);
+    sawtoothSequencer.matrix.toggle.cell(7,2);
+
+    noiseSequencer.matrix.toggle.cell(2,0);
+    noiseSequencer.matrix.toggle.cell(6,0);
+    noiseSequencer.matrix.toggle.cell(10,0);
+    noiseSequencer.matrix.toggle.cell(14,0);
+  };
+
+  loadAshesTune(); // toggle to load Ashe's song on page load 
+  
+
 
 });

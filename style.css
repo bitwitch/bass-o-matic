@@ -1,3 +1,21 @@
 #play, #clear {
   margin-top: 5px;
 }
+
+#demos-wrapper {
+  width: 700px;
+}
+
+#demos {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#demo-1, #demo-2 {
+  display: inline-block;
+}
+
+#sequencers {
+  margin-top: 1em;
+  clear: both;
+}
