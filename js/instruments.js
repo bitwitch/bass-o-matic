@@ -1,41 +1,17 @@
+const triangleSynth = new Tone.Synth().toMaster();
+const triangleSynthNotes = ["F3", "G3", "A3", "Bb3", "C4"];
 
-const synth1 = new Tone.Synth().toMaster();
+const sawSynth = new Tone.Synth({
+envelope  : {
+    attack  : 0.00025 ,
+    decay  : 0.1 ,
+    sustain  : 0.5 ,
+    release  : 2
+    }
+}).toMaster();
 
-const notes = ["E3", "F#3", "G3", "A3", "B3", "C3", "D3"];
-
-
-
-
-//setup sampler
-// const keys = new Tone.Sampler({
-//   "21" : "https://vocaroo.com/i/s1lSYORT3Zyb",
-//   "28" : "https://vocaroo.com/i/s1lkuTJvjjMI",
-//   "29" : "http://www.filedropper.com/piano-029",
-//   "33" : "http://www.filedropper.com/piano-033",
-//   "40" : "http://www.filedropper.com/piano-040",
-//   "41" : "http://www.filedropper.com/piano-049"
-// }, {
-//   "volume" : -10,
-//   "fadeOut" : "64n",
-// }).toMaster();
-
-// keys.triggerAttackRelease('21') ;
-// //the notes
-// const noteNames = ["21", "28", "29", "33", "40", "41"];
-// const loop = new Tone.Sequence(function(time, col){
-//   let column = sequencer.matrix[col];
-//   for (let i = 0; i < 6; i++){
-//     if (column[i] === 1){
-//       //slightly randomized velocities
-//       let vel = Math.random() * 0.5 + 0.5;
-//       keys.get(noteNames[i]).start(time, 0, "32n", 0, vel);
-//     }
-//   }
-// }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "16n");
-
-
-
-
+sawSynth.oscillator = new Tone.OmniOscillator("C2", "sawtooth");
+const sawSynthNotes = ["C2", "F2"];
 
 
 

@@ -1,11 +1,32 @@
-const sequencer = new Nexus.Sequencer('#sequencer',{
+const triangleSequencer = new Nexus.Sequencer('#triangle-sequencer',{
  'size': [700,300],
  'mode': 'toggle',
  'rows': 5,
  'columns': 16
-})
-sequencer.colorize("accent","#ffb649")
-sequencer.colorize("fill","#efeded")
+});
+triangleSequencer.interval.rate = 200;
+triangleSequencer.colorize("accent","#ff9a02");
+triangleSequencer.colorize("fill","#f7deb9");
+
+const sawtoothSequencer = new Nexus.Sequencer('#sawtooth-sequencer',{
+ 'size': [700,150],
+ 'mode': 'toggle',
+ 'rows': 2,
+ 'columns': 8  
+});
+sawtoothSequencer.interval.rate = 400;
+sawtoothSequencer.colorize("accent","#9b5ce8");
+sawtoothSequencer.colorize("fill","#d6c2ef");
+
+const noiseSequencer = new Nexus.Sequencer('#noise-sequencer',{
+ 'size': [700,150],
+ 'mode': 'toggle',
+ 'rows': 2,
+ 'columns': 16  
+});
+noiseSequencer.interval.rate = 200;
+noiseSequencer.colorize("accent","#e863a8");
+noiseSequencer.colorize("fill","#efc4da");
 
 const play = new Nexus.TextButton('#play',{
   'size': [700,50],
