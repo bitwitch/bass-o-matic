@@ -33,8 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
       noiseSequencer.start(); 
     } else {
       triangleSequencer.stop();
+      triangleSequencer.stepper.value = 15;
       sawtoothSequencer.stop();
+      sawtoothSequencer.stepper.value = 7;
       noiseSequencer.stop();
+      noiseSequencer.stepper.value = 15;
     }
   });
 
