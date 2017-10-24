@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Fires any time the sequencer steps to the next column, in sequece mode. 
   // The event data is an array containing all values in the column, top first. 
   loadDemo1();
+  console.log("hey boo");
 
   triangleSequencer.on('step',function(e) {
     for (let i=0; i<5; i++) {
