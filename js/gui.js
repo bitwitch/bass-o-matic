@@ -11,7 +11,7 @@ triangleSequencer.colorize("fill","#f7deb9");
 const sawtoothSequencer = new Nexus.Sequencer('#sawtooth-sequencer',{
  'size': [700,150],
  'mode': 'toggle',
- 'rows': 2,
+ 'rows': 3,
  'columns': 8  
 });
 sawtoothSequencer.interval.rate = 300;
@@ -38,6 +38,16 @@ const play = new Nexus.TextButton('#play',{
 
 play.colorize("accent", "#e84c4c");
 play.colorize("fill", "#57b8ba");
+
+const clear = new Nexus.TextButton('#clear',{
+  'size': [700,50],
+  'state': false,
+  'text': 'Clear',
+  'alternate': false
+});
+
+clear.colorize("accent", "#00a97c");
+clear.colorize("fill", "#e5da72");
 
 // Default Pattern
 triangleSequencer.matrix.toggle.cell(0,0);

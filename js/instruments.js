@@ -10,7 +10,7 @@ envelope  : {
   }
 }).toMaster();
 sawSynth.oscillator = new Tone.OmniOscillator("C2", "sawtooth");
-const sawSynthNotes = ["C2", "F2"];
+const sawSynthNotes = ["F1", "C2", "F2"];
 
 const noiseSynth = new Tone.NoiseSynth({
   envelope  : {

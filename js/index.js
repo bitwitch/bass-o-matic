@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   sawtoothSequencer.on('step',function(e) {
-    for (let i=0; i<2; i++) {
+    for (let i=0; i<3; i++) {
       if (e[i]) {
         playSaw(sawSynthNotes[i]) 
       }
@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  clear.on('change', function(e) {
+    clearTriangleSequencer();
+    clearSawtoothSequencer();
+    clearNoiseSequencer();
+  });
+
   function playTriangle(note, duration="16n") {
     triangleSynth.triggerAttackRelease(note, duration);
   };
@@ -51,6 +57,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function playNoise() {
     noiseSynth.triggerAttackRelease("16n");
+  }
+
+  function clearTriangleSequencer() {
+    const matrix = triangleSequencer.matrix.pattern;
+    for(let row=0; row<matrix.length; row++) {
+      for(let col=0; col<matrix[row].length; col++) {
+        if (matrix[row][col] === true) {
+          triangleSequencer.matrix.toggle.cell(col, row); 
+        }
+      }
+    }
+  }
+
+  function clearSawtoothSequencer() {
+    const matrix = sawtoothSequencer.matrix.pattern;
+    for(let row=0; row<matrix.length; row++) {
+      for(let col=0; col<matrix[row].length; col++) {
+        if (matrix[row][col] === true) {
+          sawtoothSequencer.matrix.toggle.cell(col, row); 
+        }
+      }
+    }
+  }
+
+  function clearNoiseSequencer() {
+    const matrix = noiseSequencer.matrix.pattern;
+    for(let row=0; row<matrix.length; row++) {
+      for(let col=0; col<matrix[row].length; col++) {
+        if (matrix[row][col] === true) {
+          noiseSequencer.matrix.toggle.cell(col, row); 
+        }
+      }
+    }
   }
 
 });
