@@ -148,6 +148,5 @@ document.addEventListener('DOMContentLoaded', function () {
     noiseSequencer.matrix.toggle.cell(10,0);
     noiseSequencer.matrix.toggle.cell(14,0);
   };
- 
 
 });
