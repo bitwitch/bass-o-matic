@@ -53,6 +53,12 @@
   width: 40px;
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+#select-lead.expand, #select-bass.expand, #select-noise.expand {
+  max-width: 200px;
 }
 
 .right {
