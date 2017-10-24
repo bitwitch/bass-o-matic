@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Fires any time the sequencer steps to the next column, in sequece mode. 
   // The event data is an array containing all values in the column, top first. 
+  loadDemo1();
+
   triangleSequencer.on('step',function(e) {
     for (let i=0; i<5; i++) {
       if (e[i]) {
@@ -43,6 +45,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   clear.on('change', function(e) {
     clearSequencer();
+  });
+
+  demo1.on('change', function(e) {
+    loadDemo1();
+  });
+
+  demo2.on('change', function(e) {
+    loadAshesTune();
   });
 
   function clearSequencer() {
@@ -96,6 +106,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function loadDemo1() {
+    clearSequencer(); 
+
+    triangleSequencer.matrix.toggle.cell(0,0);
+    triangleSequencer.matrix.toggle.cell(1,1);
+    triangleSequencer.matrix.toggle.cell(3,2);
+    triangleSequencer.matrix.toggle.cell(9,2);
+    triangleSequencer.matrix.toggle.cell(8,3);
+    triangleSequencer.matrix.toggle.cell(6,4);
+
+    sawtoothSequencer.matrix.toggle.cell(0,0); 
+    sawtoothSequencer.matrix.toggle.cell(3,0);
+    sawtoothSequencer.matrix.toggle.cell(6,1);
+
+    noiseSequencer.matrix.toggle.cell(4,0); 
+    noiseSequencer.matrix.toggle.cell(12,0)
+  }
+
   function loadAshesTune() {
     clearSequencer();
 
@@ -119,9 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
     noiseSequencer.matrix.toggle.cell(10,0);
     noiseSequencer.matrix.toggle.cell(14,0);
   };
-
-  loadAshesTune(); // toggle to load Ashe's song on page load 
-  
-
+ 
 
 });

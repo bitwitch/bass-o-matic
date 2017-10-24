@@ -68,27 +68,3 @@ const demo2 = new Nexus.TextButton('#demo-2',{
 
 demo2.colorize("accent", "#00a97c");
 demo2.colorize("fill", "#e5da72");
-
-
-// Default Pattern
-triangleSequencer.matrix.toggle.cell(0,0);
-triangleSequencer.matrix.toggle.cell(1,1);
-triangleSequencer.matrix.toggle.cell(3,2);
-triangleSequencer.matrix.toggle.cell(9,2);
-triangleSequencer.matrix.toggle.cell(8,3);
-triangleSequencer.matrix.toggle.cell(6,4);
-
-sawtoothSequencer.matrix.toggle.cell(0,0); 
-sawtoothSequencer.matrix.toggle.cell(3,0);
-sawtoothSequencer.matrix.toggle.cell(6,1);
-
-noiseSequencer.matrix.toggle.cell(4,0); 
-noiseSequencer.matrix.toggle.cell(12,0)
-
-
-
-
-
-
-
-
