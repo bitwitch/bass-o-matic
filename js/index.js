@@ -17,9 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+
+  noiseSequencer.on('step',function(e) {
+    for (let i=0; i<1; i++) {
+      if (e[i]) {
+        playNoise();
+      }
+    }
+  });
   
-
-
   play.on('change',function(e) {
     if (e) {
       triangleSequencer.start();
@@ -39,5 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function playSaw(note, duration="8n") {
     sawSynth.triggerAttackRelease(note, duration);
   };
+
+  function playNoise() {
+    noiseSynth.triggerAttackRelease("16n");
+  }
 
 });
