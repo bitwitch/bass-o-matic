@@ -1,24 +1,24 @@
-const triangleSequencer = new Nexus.Sequencer('#triangle-sequencer',{
+const leadSequencer = new Nexus.Sequencer('#lead-sequencer',{
  'size': [700,300],
  'mode': 'toggle',
  'rows': 5,
  'columns': 16
 });
-triangleSequencer.interval.rate = 150;
-triangleSequencer.colorize("accent","#ff9a02");
-triangleSequencer.colorize("fill","#f7deb9");
-triangleSequencer.colors.mediumLight = "#7f8784";
+leadSequencer.interval.rate = 150;
+leadSequencer.colorize("accent","#ff9a02");
+leadSequencer.colorize("fill","#f7deb9");
+leadSequencer.colors.mediumLight = "#7f8784";
 
-const sawtoothSequencer = new Nexus.Sequencer('#sawtooth-sequencer',{
+const bassSequencer = new Nexus.Sequencer('#bass-sequencer',{
  'size': [700,150],
  'mode': 'toggle',
  'rows': 3,
  'columns': 8  
 });
-sawtoothSequencer.interval.rate = 300;  
-sawtoothSequencer.colorize("accent","#7e49b2");
-sawtoothSequencer.colorize("fill","#dcc6ef");
-sawtoothSequencer.colors.mediumLight = "#7f8784";
+bassSequencer.interval.rate = 300;  
+bassSequencer.colorize("accent","#7e49b2");
+bassSequencer.colorize("fill","#dcc6ef");
+bassSequencer.colors.mediumLight = "#7f8784";
 
 const noiseSequencer = new Nexus.Sequencer('#noise-sequencer',{
  'size': [700,150],

@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
   loadAshesTune();
   console.log("hey boo");
 
-  triangleSequencer.on('step',function(e) {
+  leadSequencer.on('step',function(e) {
     for (let i=0; i<5; i++) {
       if (e[i]) {
-        playTriangle(notesTriangleSynth1[i]) 
+        playTriangle(triangleSynth1, notesMelody[i]) 
       }
     }
   });
 
-  sawtoothSequencer.on('step',function(e) {
+  bassSequencer.on('step',function(e) {
     for (let i=0; i<3; i++) {
       if (e[i]) {
-        playSaw(notesSawSynth1[i]) 
+        playSaw(sineSynth2, notesSawSynth1[i]) 
       }
     }
   });
@@ -24,21 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
   noiseSequencer.on('step',function(e) {
     for (let i=0; i<1; i++) {
       if (e[i]) {
-        playNoise();
+        playNoise(noiseSynth1);
       }
     }
   });
   
   play.on('change',function(e) {
     if (e) {
-      triangleSequencer.start();
-      sawtoothSequencer.start();
+      leadSequencer.start();
+      bassSequencer.start();
       noiseSequencer.start(); 
     } else {
-      triangleSequencer.stop();
-      triangleSequencer.stepper.value = 15;
-      sawtoothSequencer.stop();
-      sawtoothSequencer.stepper.value = 7;
+      leadSequencer.stop();
+      leadSequencer.stepper.value = 15;
+      bassSequencer.stop();
+      bassSequencer.stepper.value = 7;
       noiseSequencer.stop();
       noiseSequencer.stepper.value = 15;
     }
@@ -62,35 +62,35 @@ document.addEventListener('DOMContentLoaded', function () {
     clearNoiseSequencer();
   };
 
-  function playTriangle(note, duration="16n") {
-    triangleSynth1.triggerAttackRelease(note, duration);
+  function playTriangle(synth, note) {
+    synth.triggerAttackRelease(note, "16n");
   };
 
-  function playSaw(note, duration="8n") {
-    sawSynth1.triggerAttackRelease(note, duration);
+  function playSaw(synth, note) {
+    synth.triggerAttackRelease(note, "8n");
   };
 
-  function playNoise() {
-    noiseSynth1.triggerAttackRelease("16n");
+  function playNoise(synth) {
+    synth.triggerAttackRelease("16n");
   }
 
   function clearTriangleSequencer() {
-    const matrix = triangleSequencer.matrix.pattern;
+    const matrix = leadSequencer.matrix.pattern;
     for(let row=0; row<matrix.length; row++) {
       for(let col=0; col<matrix[row].length; col++) {
         if (matrix[row][col] === true) {
-          triangleSequencer.matrix.toggle.cell(col, row); 
+          leadSequencer.matrix.toggle.cell(col, row); 
         }
       }
     }
   }
 
   function clearSawtoothSequencer() {
-    const matrix = sawtoothSequencer.matrix.pattern;
+    const matrix = bassSequencer.matrix.pattern;
     for(let row=0; row<matrix.length; row++) {
       for(let col=0; col<matrix[row].length; col++) {
         if (matrix[row][col] === true) {
-          sawtoothSequencer.matrix.toggle.cell(col, row); 
+          bassSequencer.matrix.toggle.cell(col, row); 
         }
       }
     }
@@ -110,16 +110,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function loadDemo1() {
     clearSequencer(); 
 
-    triangleSequencer.matrix.toggle.cell(0,0);
-    triangleSequencer.matrix.toggle.cell(1,1);
-    triangleSequencer.matrix.toggle.cell(3,2);
-    triangleSequencer.matrix.toggle.cell(9,2);
-    triangleSequencer.matrix.toggle.cell(8,3);
-    triangleSequencer.matrix.toggle.cell(6,4);
+    leadSequencer.matrix.toggle.cell(0,0);
+    leadSequencer.matrix.toggle.cell(1,1);
+    leadSequencer.matrix.toggle.cell(3,2);
+    leadSequencer.matrix.toggle.cell(9,2);
+    leadSequencer.matrix.toggle.cell(8,3);
+    leadSequencer.matrix.toggle.cell(6,4);
 
-    sawtoothSequencer.matrix.toggle.cell(0,0); 
-    sawtoothSequencer.matrix.toggle.cell(3,0);
-    sawtoothSequencer.matrix.toggle.cell(6,1);
+    bassSequencer.matrix.toggle.cell(0,0); 
+    bassSequencer.matrix.toggle.cell(3,0);
+    bassSequencer.matrix.toggle.cell(6,1);
 
     noiseSequencer.matrix.toggle.cell(4,0); 
     noiseSequencer.matrix.toggle.cell(12,0)
@@ -128,24 +128,24 @@ document.addEventListener('DOMContentLoaded', function () {
   function loadAshesTune() {
     clearSequencer();
 
-    triangleSequencer.matrix.toggle.cell(15,0);
-    triangleSequencer.matrix.toggle.cell(10,1);
-    triangleSequencer.matrix.toggle.cell(7,2);
-    triangleSequencer.matrix.toggle.cell(11,2);
-    triangleSequencer.matrix.toggle.cell(1,4);
-    triangleSequencer.matrix.toggle.cell(4,4);
-    triangleSequencer.matrix.toggle.cell(7,4);
-    triangleSequencer.matrix.toggle.cell(10,4);
-    triangleSequencer.matrix.toggle.cell(13,4);
+    leadSequencer.matrix.toggle.cell(15,0);
+    leadSequencer.matrix.toggle.cell(10,1);
+    leadSequencer.matrix.toggle.cell(7,2);
+    leadSequencer.matrix.toggle.cell(11,2);
+    leadSequencer.matrix.toggle.cell(1,4);
+    leadSequencer.matrix.toggle.cell(4,4);
+    leadSequencer.matrix.toggle.cell(7,4);
+    leadSequencer.matrix.toggle.cell(10,4);
+    leadSequencer.matrix.toggle.cell(13,4);
 
-    sawtoothSequencer.matrix.toggle.cell(0,0);
-    sawtoothSequencer.matrix.toggle.cell(3,0);
-    sawtoothSequencer.matrix.toggle.cell(1,1);
-    sawtoothSequencer.matrix.toggle.cell(4,1);
-    sawtoothSequencer.matrix.toggle.cell(6,1);
-    sawtoothSequencer.matrix.toggle.cell(2,2);
-    sawtoothSequencer.matrix.toggle.cell(5,2);
-    sawtoothSequencer.matrix.toggle.cell(7,2);
+    bassSequencer.matrix.toggle.cell(0,0);
+    bassSequencer.matrix.toggle.cell(3,0);
+    bassSequencer.matrix.toggle.cell(1,1);
+    bassSequencer.matrix.toggle.cell(4,1);
+    bassSequencer.matrix.toggle.cell(6,1);
+    bassSequencer.matrix.toggle.cell(2,2);
+    bassSequencer.matrix.toggle.cell(5,2);
+    bassSequencer.matrix.toggle.cell(7,2);
 
     noiseSequencer.matrix.toggle.cell(2,0);
     noiseSequencer.matrix.toggle.cell(6,0);

@@ -15,7 +15,78 @@
   display: inline-block;
 }
 
-#sequencers {
-  margin-top: 1em;
+#sequencer-container {
+  width: 90%;  
+  padding: 10px;
   clear: both;
 }
+
+#sequencers {
+  width: 700px;
+  margin-top: 1em;
+  float:left;
+}
+
+#select-wrapper {
+  margin-left: 710px;
+  margin-top: 1em;
+}
+
+#select-lead {
+  height: 300px;
+  background-color: #ff9a02;
+  margin-bottom: 2px;
+}
+
+#select-bass {
+  height: 148px;
+  background-color: #7e49b2;
+  margin-bottom: 2px;
+}
+
+#select-noise {
+  height: 148px;
+  background-color: #e863a8;
+}
+
+#select-lead, #select-bass, #select-noise {
+  width: 40px;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.right {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 15px;
+}
+
+.right:after {
+  content: '';
+  display: inline-block;
+  margin-top: 1.05em;
+  margin-left: -0.6em;
+  width: 1em;
+  height: 1em;
+  border-top: 4px solid #000;
+  border-right: 4px solid #000;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+a:hover .right:after {
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+}
+
+#select-lead .right {
+  margin-top: 120px;
+}
+
+#select-bass .right, #select-noise .right {
+  margin-top: 45px;
+}
+
+
