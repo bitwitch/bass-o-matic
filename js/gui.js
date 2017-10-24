@@ -16,8 +16,8 @@ const sawtoothSequencer = new Nexus.Sequencer('#sawtooth-sequencer',{
  'columns': 8  
 });
 sawtoothSequencer.interval.rate = 300;  
-sawtoothSequencer.colorize("accent","#9b5ce8");
-sawtoothSequencer.colorize("fill","#d6c2ef");
+sawtoothSequencer.colorize("accent","#7e49b2");
+sawtoothSequencer.colorize("fill","#dcc6ef");
 sawtoothSequencer.colors.mediumLight = "#7f8784";
 
 const noiseSequencer = new Nexus.Sequencer('#noise-sequencer',{
@@ -40,7 +40,7 @@ const play = new Nexus.TextButton('#play',{
 })
 
 play.colorize("accent", "#e84c4c");
-play.colorize("fill", "#57b8ba");
+play.colorize("fill", "#5cd1c7");
 
 const clear = new Nexus.TextButton('#clear',{
   'size': [700,50],
@@ -49,7 +49,7 @@ const clear = new Nexus.TextButton('#clear',{
   'alternate': false
 });
 
-clear.colorize("accent", "#00a97c");
+clear.colorize("accent", "#5cd1c7");
 clear.colorize("fill", "#e5da72");
 
 const demo1 = new Nexus.TextButton('#demo-1',{
@@ -59,8 +59,8 @@ const demo1 = new Nexus.TextButton('#demo-1',{
   'alternate': false
 });
 
-demo1.colorize("accent", "#00a97c");
-demo1.colorize("fill", "#e5da72");
+demo1.colorize("accent", "#5cd1c7");
+demo1.colorize("fill", "#c182ff");
 
 const demo2 = new Nexus.TextButton('#demo-2',{
   'size': [200,50],
@@ -69,5 +69,5 @@ const demo2 = new Nexus.TextButton('#demo-2',{
   'alternate': false
 });
 
-demo2.colorize("accent", "#00a97c");
-demo2.colorize("fill", "#e5da72");
+demo2.colorize("accent", "#5cd1c7");
+demo2.colorize("fill", "#c182ff");

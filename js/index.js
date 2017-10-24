@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Fires any time the sequencer steps to the next column, in sequece mode. 
   // The event data is an array containing all values in the column, top first. 
-  loadDemo1();
+  loadAshesTune();
   console.log("hey boo");
 
   triangleSequencer.on('step',function(e) {
     for (let i=0; i<5; i++) {
       if (e[i]) {
-        playTriangle(triangleSynthNotes[i]) 
+        playTriangle(notesTriangleSynth1[i]) 
       }
     }
   });
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   sawtoothSequencer.on('step',function(e) {
     for (let i=0; i<3; i++) {
       if (e[i]) {
-        playSaw(sawSynthNotes[i]) 
+        playSaw(notesSawSynth1[i]) 
       }
     }
   });
@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   demo1.on('change', function(e) {
-    loadDemo1();
+    loadAshesTune();
   });
 
   demo2.on('change', function(e) {
-    loadAshesTune();
+    loadDemo1();
   });
 
   function clearSequencer() {
@@ -63,15 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function playTriangle(note, duration="16n") {
-    triangleSynth.triggerAttackRelease(note, duration);
+    triangleSynth1.triggerAttackRelease(note, duration);
   };
 
   function playSaw(note, duration="8n") {
-    sawSynth.triggerAttackRelease(note, duration);
+    sawSynth1.triggerAttackRelease(note, duration);
   };
 
   function playNoise() {
-    noiseSynth.triggerAttackRelease("16n");
+    noiseSynth1.triggerAttackRelease("16n");
   }
 
   function clearTriangleSequencer() {
@@ -128,6 +128,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function loadAshesTune() {
     clearSequencer();
 
+    triangleSequencer.matrix.toggle.cell(15,0);
+    triangleSequencer.matrix.toggle.cell(10,1);
+    triangleSequencer.matrix.toggle.cell(7,2);
+    triangleSequencer.matrix.toggle.cell(11,2);
     triangleSequencer.matrix.toggle.cell(1,4);
     triangleSequencer.matrix.toggle.cell(4,4);
     triangleSequencer.matrix.toggle.cell(7,4);

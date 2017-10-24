@@ -2,12 +2,12 @@
   margin-top: 5px;
 }
 
-#demos-wrapper {
+.wrapper {
   width: 700px;
 }
 
 #demos {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 
