@@ -50,15 +50,12 @@
 }
 
 #select-lead, #select-bass, #select-noise {
+  overflow: hidden;
   width: 40px;
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-}
-
-#select-lead.expand, #select-bass.expand, #select-noise.expand {
-  max-width: 200px;
 }
 
 .right {
@@ -93,6 +90,14 @@ a:hover .right:after {
 
 #select-bass .right, #select-noise .right {
   margin-top: 45px;
+}
+
+#lead-link, #bass-link, #noise-link {
+  float: left;
+}
+
+#lead-synths, #bass-synths, #noise-synths {
+  margin-left: 100px;
 }
 
 
