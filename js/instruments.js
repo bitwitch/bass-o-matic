@@ -85,32 +85,18 @@ const squareSynth1 = new Tone.Synth({
 }).toMaster();
 squareSynth1.volume.value = -23; 
 
-const kickSub = new Tone.MembraneSynth({
-  pitchDecay  : 0.001 ,
-  octaves  : 10 ,
-  oscillator  : {
-    type  : "sine"
-    }  ,
-  envelope  : {
-    attack  : 0.0025 ,
-    decay  : 1 ,
-    sustain  : 0 ,
-    release  : 0.1 ,
-    attackCurve  : "exponential"
+const kick = new Tone.PolySynth(3, Tone.MembraneSynth).toMaster();
+kick.pitchDecay = 0.0001;
+kick.set({
+  "envelope" : {
+    "attack"  : 0.00025 ,
+    "decay"  : 1 ,
+    "sustain"  : 0 ,
+    "release"  : 0.1 ,
+    "attackCurve"  : "exponential"
     }
-})
-
-const kick = new Tone.PolySynth(2, Tone.MembraneSynth).toMaster();
-kick.volume.value = -10;
-kick.pitchDecay = 0.001;
-kick.envelope = {
-    attack  : 0.0025 ,
-    decay  : 1 ,
-    sustain  : 0 ,
-    release  : 0.1 ,
-    attackCurve  : "exponential"
-    }; 
-kick.triggerAttackRelease(["F1", "F2"], "4n");
+    }); 
+debugger;
 // Noise 
 const noiseSynth1 = new Tone.NoiseSynth({
   noise  : {
