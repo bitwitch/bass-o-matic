@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   bassSequencer.on('step',function(e) {
     for (let i=0; i<3; i++) {
       if (e[i]) {
-        playSaw(sineSynth2, notesSawSynth1[i]) 
+        playSaw(sineSynth2, notesBassSynth[i]) 
       }
     }
   });
