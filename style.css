@@ -100,4 +100,43 @@ a:hover .right:after {
   margin-left: 100px;
 }
 
+.wave {
+  margin-top: 20px;
+  width: 100px; 
+  height: 71px; 
+}
 
+.wave:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+#bass-sine .wave, #bass-square .wave {
+  width: 70px;
+  height: 50px;
+  margin-right: 50px;
+  margin-top: 15px;
+}
+
+#white-noise {
+  color: #fff; 
+}
+
+#pink-noise {
+  color: #ffa3ef;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+#white-noise, #pink-noise {
+  display: block;
+  font-family: 'Lato', sans-serif; 
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+#white-noise:hover, #pink-noise:hover {
+  color: #5a47ed;
+}

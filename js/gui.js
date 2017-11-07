@@ -8,17 +8,22 @@ leadSequencer.interval.rate = 150;
 leadSequencer.colorize("accent","#ff9a02");
 leadSequencer.colorize("fill","#f7deb9");
 leadSequencer.colors.mediumLight = "#7f8784";
+leadSequencer.instrument = triangleSynth1;
+leadSequencer.notes = notesMelody;
 
 const bassSequencer = new Nexus.Sequencer('#bass-sequencer',{
  'size': [700,150],
  'mode': 'toggle',
  'rows': 3,
- 'columns': 8  
+ 'columns': 8
 });
+
 bassSequencer.interval.rate = 300;  
 bassSequencer.colorize("accent","#7e49b2");
 bassSequencer.colorize("fill","#dcc6ef");
 bassSequencer.colors.mediumLight = "#7f8784";
+bassSequencer.instrument = sineSynth2; 
+bassSequencer.notes = notesBassSynth; 
 
 const noiseSequencer = new Nexus.Sequencer('#noise-sequencer',{
  'size': [700,150],
@@ -30,6 +35,7 @@ noiseSequencer.interval.rate = 150;
 noiseSequencer.colorize("accent","#e863a8");
 noiseSequencer.colorize("fill","#efc4da");
 noiseSequencer.colors.mediumLight = "#7f8784";
+noiseSequencer.instrument = noiseSynth1; 
 
 const play = new Nexus.TextButton('#play',{
   'size': [700,50],
@@ -71,6 +77,3 @@ const demo2 = new Nexus.TextButton('#demo-2',{
 
 demo2.colorize("accent", "#5cd1c7");
 demo2.colorize("fill", "#c182ff");
-
-
-

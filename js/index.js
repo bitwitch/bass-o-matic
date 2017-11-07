@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Fires any time the sequencer steps to the next column, in sequece mode. 
   // The event data is an array containing all values in the column, top first. 
   loadAshesTune();
-  console.log("hey boo");
+  console.log("hey boo <3");
 
   leadSequencer.on('step',function(e) {
     for (let i=0; i<5; i++) {
       if (e[i]) {
-        playTriangle(triangleSynth1, notesMelody[i]) 
+        playTriangle(leadSequencer.instrument, leadSequencer.notes[i]) 
       }
     }
   });
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   bassSequencer.on('step',function(e) {
     for (let i=0; i<3; i++) {
       if (e[i]) {
-        playSaw(sineSynth2, notesBassSynth[i]) 
+        playSaw(bassSequencer.instrument, bassSequencer.notes[i]) 
       }
     }
   });
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   noiseSequencer.on('step',function(e) {
     for (let i=0; i<1; i++) {
       if (e[i]) {
-        playNoise(noiseSynth1);
+        playNoise(noiseSequencer.instrument);
       }
     }
   });

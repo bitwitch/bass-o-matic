@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Bass-O-Matic</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="js/Tone.min.js"></script>
   <script type="text/javascript" src="js/NexusUI.js"></script>
@@ -24,35 +25,33 @@
     </div>
 
     <div id="select-wrapper">
-      <div id="select-lead">
-        <a id="lead-link" class="lead-link" href="#"><span class="lead-link right"></span></a>
-        <div id="lead-synths">
-          <p>triangle1</p>
-          <p>triangle2</p>
-          <p>sine</p>
-          <p>square</p>
+        <div id="select-lead">
+          <a id="lead-link" class="lead-link" href="#"><span class="lead-link right"></span></a>
+          <div id="lead-synths">
+            <img id="lead-triangle" class="wave" src="images/triangle-wave.png">
+            <img id="lead-sine" class="wave" src="images/sine-wave.png">
+            <img id="lead-poly" class="wave" src="images/poly-sine-wave.png">
+          </div>
+        </div>
+        <div id="select-bass">
+          <a id="bass-link" class="bass-link" href="#"><span class="bass-link right"></span></a>
+          <div id="bass-synths">
+            <img id="bass-sine" class="wave" src="images/sine-wave.png">
+          </div>
+        </div>
+        <div id="select-noise">
+          <a id="noise-link" class="noise-link" href="#"><span class="noise-link right"></span></a>
+          <div id="noise-synths">
+            <a href="#" id="white-noise">White</a>
+            <a href="#" id="pink-noise">Pink</a>
+          </div>
         </div>
       </div>
-      <div id="select-bass">
-        <a id="bass-link" class="bass-link" href="#"><span class="bass-link right"></span></a>
-        <div id="bass-synths">
-          <p>sine</p>
-          <p>square</p>
-        </div>
-      </div>
-      <div id="select-noise">
-        <a id="noise-link" class="noise-link" href="#"><span class="noise-link right"></span></a>
-        <div id="noise-synths">
-          <p>White</p>
-          <p>Pink</p>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <script type="text/javascript" src="js/ui.js"></script>
-  <script type="text/javascript" src="js/gui.js"></script>
   <script type="text/javascript" src="js/instruments.js"></script>
+  <script type="text/javascript" src="js/gui.js"></script>
+  <script type="text/javascript" src="js/ui.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
