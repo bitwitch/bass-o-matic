@@ -1,5 +1,5 @@
 # Bass-O-Matic
-A step sequencing music creation application. Live demo [here](https://xxdoombox.github.io/bass-o-matic/).
+A step sequencing music creation application. Live demo [here](https://bitwitch.github.io/bass-o-matic/).
 
 ## How it works
 ***headphones recommended**  
